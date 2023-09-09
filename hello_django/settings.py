@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
+# import environ
 import os
 from os import getenv
 # from dotenv import load_dotenv
@@ -25,35 +25,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #     # set casting, default value
 #     DEBUG=(bool, False)
 # )
-env = environ.FileAwareEnv(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+# env = environ.FileAwareEnv(
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
 # Take environment variables from .env file
 # environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-environ.FileAwareEnv.read_env(os.path.join(BASE_DIR, '.env'))
+# environ.FileAwareEnv.read_env(os.path.join(BASE_DIR, '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
-# SECRET_KEY = "django-insecure-p2l=gv3#3_#=1_h3zj=!o)#$5)=ghvlu_b_x_3fv$k0op=#*+i"
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = "django-insecure-p2l=gv3#3_#=1_h3zj=!o)#$5)=ghvlu_b_x_3fv$k0op=#*+i"
+# SECRET_KEY = env("SECRET_KEY")
 # SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 # SECRET_KEY = getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 # DEBUG = False
-DEBUG = env('DEBUG')
+# DEBUG = env('DEBUG')
 # DEBUG = int(os.environ.get('DEBUG', default=0))
 # 0 means False and 1 is True
 # DEBUG = int(getenv("DEBUG"))
 # False if not in os.environ because of casting above
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 # ALLOWED_HOSTS = getenv("ALLOWED_HOSTS").split (",")
 
 
