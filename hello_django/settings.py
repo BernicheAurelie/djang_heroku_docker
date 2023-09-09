@@ -14,6 +14,9 @@ from pathlib import Path
 # import environ
 import os
 from os import getenv
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hello_django.settings')
+
 # from dotenv import load_dotenv
 
 # load_dotenv()
