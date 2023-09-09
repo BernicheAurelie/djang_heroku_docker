@@ -13,10 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 # import environ
 import os
-from os import getenv
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hello_django.settings')
-
+# from os import getenv
 # from dotenv import load_dotenv
 
 # load_dotenv()
@@ -44,7 +41,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-p2l=gv3#3_#=1_h3zj=!o)#$5)=ghvlu_b_x_3fv$k0op=#*+i"
 # SECRET_KEY = env("SECRET_KEY")
 # SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
-# SECRET_KEY = getenv("SECRET_KEY")
+# SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,7 +49,7 @@ DEBUG = True
 # DEBUG = env('DEBUG')
 # DEBUG = int(os.environ.get('DEBUG', default=0))
 # 0 means False and 1 is True
-# DEBUG = int(getenv("DEBUG"))
+# DEBUG = int(os.getenv("DEBUG"))
 # False if not in os.environ because of casting above
 
 ALLOWED_HOSTS = []
@@ -151,9 +148,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ou si ça marche pas, à vérifier:
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 # Default primary key field type
