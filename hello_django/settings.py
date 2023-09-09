@@ -44,15 +44,15 @@ SECRET_KEY = "django-insecure-p2l=gv3#3_#=1_h3zj=!o)#$5)=ghvlu_b_x_3fv$k0op=#*+i
 # SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 # DEBUG = env('DEBUG')
 # DEBUG = int(os.environ.get('DEBUG', default=0))
 # 0 means False and 1 is True
 # DEBUG = int(os.getenv("DEBUG"))
 # False if not in os.environ because of casting above
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testserver']
 # ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 # ALLOWED_HOSTS = getenv("ALLOWED_HOSTS").split (",")
 
